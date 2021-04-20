@@ -65,3 +65,12 @@
 }
 ```
 
+## 图片 image
+
+- 解决div中img下4px的空白距离
+  1. 定义图片img标签vertical-align:bottom，vertical-align:middle，vertical-align:top，vertical-align:bottom;。（默认和基线对齐vertical-align:baseline）
+  2. 给img父元素div设置font-size=0;。
+  3. 设置的宽高和img图片的大小一样即可。
+  4. 设置img为display:block;。
+     
+

@@ -1,5 +1,8 @@
 # Javascript 继承
 
+> 相关知识点
+> 原型链、this指针指向(call, apply, bind)、new关键字
+
 ## ES5
 
 在引入class关键字之前，主要通过 **原型链** 和 **call()** 来实现类的继承

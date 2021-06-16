@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #myCanvas {
+            transform: scale(.5) translate(-50%, -50%);
+            transform-origin: left top;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <canvas id="myCanvas" width="750" height="1624"></canvas>
+    </div>
+</body>
+
+</html>

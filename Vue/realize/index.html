@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue realize</title>
+</head>
+
+<body>
+    <div id="container">
+        {{ msg }}<br />
+        <input class="v-model__input" type="text" v-model="name" />
+        <div class="v-model__div">
+            {{ name }}
+        </div>
+        <div class="virtual-dom">
+            {{ msg }}
+        </div>
+    </div>
+</body>
+
+<script src="./publishSubscribe.js"></script>
+<script src="./virtualDOM.js"></script>
+<script src="./reactive.js"></script>
+
+</html>

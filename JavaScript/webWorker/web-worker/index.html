@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var worker = new Worker('https://tstatic.ssl.jimingkeji.com.cn/javis-test/work.js');
+
+        // worker.postMessage('Hello World');
+        worker.postMessage({ cmd: 'start', msg: 'post Message start' });
+
+        // 接收子线程发回来的消息
+        worker.onmessage = function (event) {
+            console.log('Received message' + event.data);
+            doSomething();
+        }
+
+        // 错误处理
+        worker.onerror(function (event) {
+            console.log([
+                'ERROR: Line ', e.lineno, ' in ', e.filename, ': ', e.message
+            ].join(''));
+        });
+
+        function doSomething() {
+            worker.postMessage({ cmd: 'stop', msg: 'post Message stop' });
+            // worker.terminate(); // 主线程关闭 worker
+        }
+    </script>
+</body>
+
+</html>

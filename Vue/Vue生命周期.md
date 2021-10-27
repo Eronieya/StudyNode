@@ -12,6 +12,8 @@
 
 此阶段 **最早获取 data 中数据**、**最早发送 ajax 请求数据的阶段**
 
+如果在 `created()` 钩子进行DOM操作，要放在 `nextTick()` 的回调函数中。因为在created()钩子函数中，页面的DOM还未渲染，这时候也没办法操作DOM，所以，此时如果想要操作DOM，必须将操作的代码放在`nextTick()`的回调函数中。
+
 ## beforeMount
 
 在此阶段已经完成了模板的编译，但是还没有 渲染到页面中
@@ -33,3 +35,4 @@
 ## beforeDestroy
 
 ## destroyed
+

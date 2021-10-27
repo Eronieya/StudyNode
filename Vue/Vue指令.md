@@ -77,7 +77,18 @@
 
 ## 双向数据绑定
 
-### v-model
+### v-model语法糖
+
+```vue
+<input v-model="message" />
+// 等同于
+<input 
+       v-bind:value="message"
+       v-on:input="message=$event.target.value"
+       />
+```
+
+
 
 ## 侦听器 watch
 

@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import callSign from "../utils/request";
+
 export default {
   name: "HelloWorld",
   props: {
@@ -31,6 +33,8 @@ export default {
     };
   },
   mounted() {
+    console.log(callSign);
+
     let param = this.getAllUrlParam(); // 获取链接的所有参数
     if (param.code) {
       // let obj = {

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'pac-man';
+    src: url('./onePlus.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+.hello {
+    color: red;
+    font-family: 'pac-man';
+    background: url('./icon.png');
+    background-repeat: no-repeat;
+}

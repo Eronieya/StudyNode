@@ -168,3 +168,9 @@ methods: {
    }
    ```
 
+
+
+# vuex页面刷新数据丢失问题
+
+1. 将vuex的数据保存到浏览器缓存中(sessionStorage, localStorage, cookie)
+2. 页面刷新再次请求远程数据

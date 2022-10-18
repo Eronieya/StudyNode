@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>观察者模式</title>
+</head>
+
+<body>
+  <script>
+    /* 
+      被观察者
+      1. 添加观察者
+      2. 移除观察者
+      3. 通知观察者（发送通知）
+     */
+    class BeWatcher {
+      constructor() {
+        this.observerList = [];
+      }
+
+      // 添加观察者
+      addObserver(observer) {
+        this.observerList.push(observer);
+      }
+
+      // 移除观察者
+      removeObserver(observer) {
+        const index = this.observerList.findIndex(o => o.name === observer.name);
+        this.observerList.splice(index, 1);
+      }
+
+      // 通知观察者
+      notifyObserver(message) {
+        this.observerList.forEach(observer => observer.notified(message));
+      }
+    }
+
+    /* 
+      观察者
+      1. 接收通知
+    */
+    class Observer {
+      constructor(name, beWatcher) {
+        this.name = name;
+        if (beWatcher) {
+          beWatcher.addObserver(this);
+        }
+      }
+
+      // 接收通知
+      notified(msg) {
+        console.log(this.name, ' got message ', msg);
+      }
+    }
+
+    const beWatcher = new BeWatcher();
+    const observerA = new Observer('obs A', beWatcher);
+    const observerB = new Observer('obs B');
+    beWatcher.addObserver(observerB);
+    beWatcher.notifyObserver('Hello from beWatcher');
+    beWatcher.removeObserver(observerA);
+    beWatcher.notifyObserver('Hello Again');
+  </script>
+</body>
+
+</html>
